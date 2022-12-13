@@ -1,0 +1,100 @@
+.game-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset{
+  width: 100%;
+ // height: vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+
+}
+
+.game-board{
+  width: 50%;
+  height: 60%;
+  border-radius: 2rem;
+  background: linear-gradient(to right bottom,
+  rgba(255,255,255, 0.8),
+  rgba(255, 255, 255, 0.3)
+  );
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 15px;
+}
+
+.square{
+  width: 99%;
+  height: 99%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.square:hover{
+  cursor: pointer;
+  background: linear-gradient(to right bottom,
+    rgba(255,255,255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+span {
+  cursor: pointer;
+}
+h3{
+  position: absolute;
+  top: 4%;
+}
+.playerO{
+  color: cornflowerblue;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  //border-style: solid;
+  //border-width: 1px;
+  //border-color: darkslategray;
+}
+.row{
+  //box-sizing: border-box;
+  //background: linear-gradient(to right bottom,
+  //  rgba(255,255,255, 0.3),
+  //  rgba(255, 255, 255, 0.2));
+  display: flex;
+  //flex-direction: column;
+}
+.button{
+  border-color: darkslategray;
+  border-width: 1px;
+  border-width: medium;
+  color: black;
+
+}
+.onePlayer{
+  border-color: aliceblue;
+  border-width: medium;
+  color: darkslategray;
+  margin-left: 0;
+
+}
+.twoPlayer{
+  border-color: aliceblue;
+  border-width: medium;
+  color:  darkslategray;
+
+}
+

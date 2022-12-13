@@ -1,0 +1,76 @@
+
+<div class = "game-container">
+  <div class = "game-board">
+    <div *ngFor="let square of board; let i = index" class = "square" [ngClass]="{'playerO': square=='O'}"
+         (click)="movePlayer(i)">
+      {{square}}
+    </div>
+</div>
+</div>
+<!-- [ngClass]="{'playerO': square=='O'}"-->
+
+  <div *ngIf="winner === ''" >
+    <h3 style="text-align: center; text-decoration: darkcyan">Player Turn: {{player}}</h3>
+  </div>
+  <div *ngIf="winner === 'X'" >
+    <h3>WOOOOOW WINNER IS IKS</h3>
+  </div>
+  <div *ngIf="winner=== 'O'" >
+    <h3>WOOOOOOOW WINNER IS O</h3>
+  </div>
+
+
+<button mat-stroked-button color="black" type="button" class ="onePlayer"
+        (click)="OnePlayer()">Play with Pc
+</button>
+  <button mat-stroked-button color="black" type="button" class ="twoPlayer" style="margin-left: 30px"
+          (click)="TwoPlayers()">2 Players Mode
+  </button>
+
+<div class = "reset">
+  <button mat-stroked-button color="black" type="button" class ="button"
+          (click)="reset()">Reset
+  </button>
+</div>
+
+
+<div style="display: grid;grid-template-columns: 50% 50%">
+  <div>
+    <h2 style="text-align: center">Player X Moves</h2>
+    <div class = "row" *ngFor="let state of stateBoard; let i = index">
+      <div class="column" *ngIf="state.values=='X'" style="width: 100% !important; text-align: center">
+        <span (click)="setToClickedState(i)" >Move number {{i + 1}}: Player X clicked box {{state.id}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 style="text-align: center">Player O Moves</h2>
+    <div class = "row" *ngFor="let state of stateBoard; let i = index" >
+      <div class="column" *ngIf="state.values=='O'" style="width: 100% !important; text-align: center">
+        <span (click)="setToClickedState(i)">Move number {{i + 1}}: Player O clicked box {{state.id}}</span>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--  <div class = "row" *ngFor="let state of stateBoard; let i = index" >-->
+<!--    <div class="column" *ngIf="state.values=='X'">-->
+<!--      -->
+<!--      <div *ngIf="state.values=='X'">-->
+<!--        <span (click)="setToClickedState(i)">Player X clicked box {{state.id}}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column" *ngIf="state.values=='O'">-->
+<!--      <h2>Player O moves</h2>-->
+<!--      &lt;!&ndash;<div *ngFor="let oMoves of playerOMoves" >&ndash;&gt;-->
+<!--      <div *ngIf="state.values=='O'">-->
+<!--        <span (click)="setToClickedState(i)">Player O clicked box {{state.id}}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+
+
+<!--<div *ngFor="let moves of playerMoves"><span>Player {{moves}} clicked box {{moves}}</span></div>-->
